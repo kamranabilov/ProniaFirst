@@ -29,7 +29,7 @@
                                     <div class="inner-img">
                                         <div class="scene fill">
                                             <div class="expand-width" data-depth="0.2">
-                                                <img src="assets/images/website-images//@slider.Image"
+                                                <img src="~/assets/images/website-images//@slider.Image"
                                                      alt="Inner Image" />
                                             </div>
                                         </div>
@@ -59,7 +59,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="shipping-item">
                         <div class="shipping-img">
-                            <img src="assets/images/website-images//car.png"
+                            <img src="~/assets/images/website-images//car.png"
                                  alt="Shipping Icon" />
                         </div>
                         <div class="shipping-content">
@@ -71,7 +71,7 @@
                 <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
                     <div class="shipping-item">
                         <div class="shipping-img">
-                            <img src="assets/images/website-images//card.png"
+                            <img src="~/assets/images/website-images//card.png"
                                  alt="Shipping Icon" />
                         </div>
                         <div class="shipping-content">
@@ -83,7 +83,7 @@
                 <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
                     <div class="shipping-item">
                         <div class="shipping-img">
-                            <img src="assets/images/website-images//service.png"
+                            <img src="~/assets/images/website-images//service.png"
                                  alt="Shipping Icon" />
                         </div>
                         <div class="shipping-content">
@@ -151,13 +151,13 @@
                                 <div class="col-xl-3 col-md-4 col-sm-6">
                                     <div class="product-item">
                                         <div class="product-img">
-                                            <a href="shop.html">
+                                            <a asp-controller="plant" asp-action="detail" asp-route-id="@plant.Id">
                                                 <img class="primary-img"
-                                                     src="~/assets/images/website-images//"
-                                                     alt="" />
+                                                     src="~/assets/images/website-images//@plant.PlantImages.FirstOrDefault(x=>x.IsMain==true)?.Name"
+                                                     alt="@plant.PlantImages.FirstOrDefault(x=>x.IsMain==true)?.Alternative" />
                                                 <img class="secondary-img"
-                                                     src="assets/images/website-images//1-2-270x300.jpg"
-                                                     alt="Product Images" />
+                                                     src="~/assets/images/website-images//@plant.PlantImages.FirstOrDefault(x=>x.IsMain==false)?.Name"
+                                                     alt="@plant.PlantImages.FirstOrDefault(x=>x.IsMain==false)?.Alternative" />
                                             </a>
                                             <div class="product-add-action">
                                                 <ul>
@@ -230,10 +230,10 @@
                                     <div class="product-img">
                                         <a href="shop.html">
                                             <img class="primary-img"
-                                                 src="assets/images/website-images//1-5-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-5-270x300.jpg"
                                                  alt="Product Images" />
                                             <img class="secondary-img"
-                                                 src="assets/images/website-images//1-6-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-6-270x300.jpg"
                                                  alt="Product Images" />
                                         </a>
                                         <div class="product-add-action">
@@ -298,10 +298,10 @@
                                     <div class="product-img">
                                         <a href="shop.html">
                                             <img class="primary-img"
-                                                 src="assets/images/website-images//1-6-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-6-270x300.jpg"
                                                  alt="Product Images" />
                                             <img class="secondary-img"
-                                                 src="assets/images/website-images//1-7-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-7-270x300.jpg"
                                                  alt="Product Images" />
                                         </a>
                                         <div class="product-add-action">
@@ -366,10 +366,10 @@
                                     <div class="product-img">
                                         <a href="shop.html">
                                             <img class="primary-img"
-                                                 src="assets/images/website-images//1-7-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-7-270x300.jpg"
                                                  alt="Product Images" />
                                             <img class="secondary-img"
-                                                 src="assets/images/website-images//1-8-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-8-270x300.jpg"
                                                  alt="Product Images" />
                                         </a>
                                         <div class="product-add-action">
@@ -434,10 +434,10 @@
                                     <div class="product-img">
                                         <a href="shop.html">
                                             <img class="primary-img"
-                                                 src="assets/images/website-images//1-8-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-8-270x300.jpg"
                                                  alt="Product Images" />
                                             <img class="secondary-img"
-                                                 src="assets/images/website-images//1-1-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-1-270x300.jpg"
                                                  alt="Product Images" />
                                         </a>
                                         <div class="product-add-action">
@@ -502,10 +502,10 @@
                                     <div class="product-img">
                                         <a href="shop.html">
                                             <img class="primary-img"
-                                                 src="assets/images/website-images//1-1-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-1-270x300.jpg"
                                                  alt="Product Images" />
                                             <img class="secondary-img"
-                                                 src="assets/images/website-images//1-2-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-2-270x300.jpg"
                                                  alt="Product Images" />
                                         </a>
                                         <div class="product-add-action">
@@ -570,10 +570,10 @@
                                     <div class="product-img">
                                         <a href="shop.html">
                                             <img class="primary-img"
-                                                 src="assets/images/website-images//1-2-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-2-270x300.jpg"
                                                  alt="Product Images" />
                                             <img class="secondary-img"
-                                                 src="assets/images/website-images//1-3-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-3-270x300.jpg"
                                                  alt="Product Images" />
                                         </a>
                                         <div class="product-add-action">
@@ -638,10 +638,10 @@
                                     <div class="product-img">
                                         <a href="shop.html">
                                             <img class="primary-img"
-                                                 src="assets/images/website-images//1-3-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-3-270x300.jpg"
                                                  alt="Product Images" />
                                             <img class="secondary-img"
-                                                 src="assets/images/website-images//1-4-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-4-270x300.jpg"
                                                  alt="Product Images" />
                                         </a>
                                         <div class="product-add-action">
@@ -706,10 +706,10 @@
                                     <div class="product-img">
                                         <a href="shop.html">
                                             <img class="primary-img"
-                                                 src="assets/images/website-images//1-4-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-4-270x300.jpg"
                                                  alt="Product Images" />
                                             <img class="secondary-img"
-                                                 src="assets/images/website-images//1-5-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-5-270x300.jpg"
                                                  alt="Product Images" />
                                         </a>
                                         <div class="product-add-action">
@@ -781,10 +781,10 @@
                                     <div class="product-img">
                                         <a href="shop.html">
                                             <img class="primary-img"
-                                                 src="assets/images/website-images//1-7-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-7-270x300.jpg"
                                                  alt="Product Images" />
                                             <img class="secondary-img"
-                                                 src="assets/images/website-images//1-8-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-8-270x300.jpg"
                                                  alt="Product Images" />
                                         </a>
                                         <div class="product-add-action">
@@ -849,10 +849,10 @@
                                     <div class="product-img">
                                         <a href="shop.html">
                                             <img class="primary-img"
-                                                 src="assets/images/website-images//1-8-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-8-270x300.jpg"
                                                  alt="Product Images" />
                                             <img class="secondary-img"
-                                                 src="assets/images/website-images//1-1-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-1-270x300.jpg"
                                                  alt="Product Images" />
                                         </a>
                                         <div class="product-add-action">
@@ -917,10 +917,10 @@
                                     <div class="product-img">
                                         <a href="shop.html">
                                             <img class="primary-img"
-                                                 src="assets/images/website-images//1-1-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-1-270x300.jpg"
                                                  alt="Product Images" />
                                             <img class="secondary-img"
-                                                 src="assets/images/website-images//1-2-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-2-270x300.jpg"
                                                  alt="Product Images" />
                                         </a>
                                         <div class="product-add-action">
@@ -985,10 +985,10 @@
                                     <div class="product-img">
                                         <a href="shop.html">
                                             <img class="primary-img"
-                                                 src="assets/images/website-images//1-2-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-2-270x300.jpg"
                                                  alt="Product Images" />
                                             <img class="secondary-img"
-                                                 src="assets/images/website-images//1-3-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-3-270x300.jpg"
                                                  alt="Product Images" />
                                         </a>
                                         <div class="product-add-action">
@@ -1053,10 +1053,10 @@
                                     <div class="product-img">
                                         <a href="shop.html">
                                             <img class="primary-img"
-                                                 src="assets/images/website-images//1-5-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-5-270x300.jpg"
                                                  alt="Product Images" />
                                             <img class="secondary-img"
-                                                 src="assets/images/website-images//1-6-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-6-270x300.jpg"
                                                  alt="Product Images" />
                                         </a>
                                         <div class="product-add-action">
@@ -1121,10 +1121,10 @@
                                     <div class="product-img">
                                         <a href="shop.html">
                                             <img class="primary-img"
-                                                 src="assets/images/website-images//1-6-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-6-270x300.jpg"
                                                  alt="Product Images" />
                                             <img class="secondary-img"
-                                                 src="assets/images/website-images//1-7-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-7-270x300.jpg"
                                                  alt="Product Images" />
                                         </a>
                                         <div class="product-add-action">
@@ -1189,10 +1189,10 @@
                                     <div class="product-img">
                                         <a href="shop.html">
                                             <img class="primary-img"
-                                                 src="assets/images/website-images//1-3-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-3-270x300.jpg"
                                                  alt="Product Images" />
                                             <img class="secondary-img"
-                                                 src="assets/images/website-images//1-4-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-4-270x300.jpg"
                                                  alt="Product Images" />
                                         </a>
                                         <div class="product-add-action">
@@ -1257,10 +1257,10 @@
                                     <div class="product-img">
                                         <a href="shop.html">
                                             <img class="primary-img"
-                                                 src="assets/images/website-images//1-4-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-4-270x300.jpg"
                                                  alt="Product Images" />
                                             <img class="secondary-img"
-                                                 src="assets/images/website-images//1-5-270x300.jpg"
+                                                 src="~/assets/images/website-images//1-5-270x300.jpg"
                                                  alt="Product Images" />
                                         </a>
                                         <div class="product-add-action">
@@ -1335,7 +1335,7 @@
             <div class="col-lg-8">
                 <div class="banner-item img-hover-effect">
                     <div class="banner-img">
-                        <img src="assets/images/website-images//1-1-770x300.jpg"
+                        <img src="~/assets/images/website-images//1-1-770x300.jpg"
                              alt="Banner Image" />
                     </div>
                     <div class="banner-content text-position-left">
@@ -1354,7 +1354,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="banner-item img-hover-effect">
                     <div class="banner-img">
-                        <img src="assets/images/website-images//1-2-370x300.jpg"
+                        <img src="~/assets/images/website-images//1-2-370x300.jpg"
                              alt="Banner Image" />
                     </div>
                     <div class="banner-content text-position-center">
@@ -1370,7 +1370,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="banner-item img-hover-effect">
                     <div class="banner-img">
-                        <img src="assets/images/website-images//1-3-370x300.jpg"
+                        <img src="~/assets/images/website-images//1-3-370x300.jpg"
                              alt="Banner Image" />
                     </div>
                     <div class="banner-content text-position-center">
@@ -1386,7 +1386,7 @@
             <div class="col-lg-8">
                 <div class="banner-item img-hover-effect">
                     <div class="banner-img">
-                        <img src="assets/images/website-images//1-4-770x300.jpg"
+                        <img src="~/assets/images/website-images//1-4-770x300.jpg"
                              alt="Banner Image" />
                     </div>
                     <div class="banner-content text-position-left">
@@ -1424,10 +1424,10 @@
                             <div class="product-img">
                                 <a href="shop.html">
                                     <img class="primary-img"
-                                         src="assets/images/website-images//1-9-270x300.jpg"
+                                         src="~/assets/images/website-images//1-9-270x300.jpg"
                                          alt="Product Images" />
                                     <img class="secondary-img"
-                                         src="assets/images/website-images//1-10-270x300.jpg"
+                                         src="~/assets/images/website-images//1-10-270x300.jpg"
                                          alt="Product Images" />
                                 </a>
                                 <div class="product-add-action">
@@ -1490,10 +1490,10 @@
                             <div class="product-img">
                                 <a href="shop.html">
                                     <img class="primary-img"
-                                         src="assets/images/website-images//1-10-270x300.jpg"
+                                         src="~/assets/images/website-images//1-10-270x300.jpg"
                                          alt="Product Images" />
                                     <img class="secondary-img"
-                                         src="assets/images/website-images//1-11-270x300.jpg"
+                                         src="~/assets/images/website-images//1-11-270x300.jpg"
                                          alt="Product Images" />
                                 </a>
                                 <div class="product-add-action">
@@ -1556,10 +1556,10 @@
                             <div class="product-img">
                                 <a href="shop.html">
                                     <img class="primary-img"
-                                         src="assets/images/website-images//1-11-270x300.jpg"
+                                         src="~/assets/images/website-images//1-11-270x300.jpg"
                                          alt="Product Images" />
                                     <img class="secondary-img"
-                                         src="assets/images/website-images//1-4-270x300.jpg"
+                                         src="~/assets/images/website-images//1-4-270x300.jpg"
                                          alt="Product Images" />
                                 </a>
                                 <div class="product-add-action">
@@ -1622,10 +1622,10 @@
                             <div class="product-img">
                                 <a href="shop.html">
                                     <img class="primary-img"
-                                         src="assets/images/website-images//1-7-270x300.jpg"
+                                         src="~/assets/images/website-images//1-7-270x300.jpg"
                                          alt="Product Images" />
                                     <img class="secondary-img"
-                                         src="assets/images/website-images//1-8-270x300.jpg"
+                                         src="~/assets/images/website-images//1-8-270x300.jpg"
                                          alt="Product Images" />
                                 </a>
                                 <div class="product-add-action">
@@ -1711,7 +1711,7 @@
                         <div class="user-info mb-3">
                             <div class="user-shape-wrap">
                                 <div class="user-img">
-                                    <img src="assets/images/website-images//1--1rnu4p.png"
+                                    <img src="~/assets/images/website-images//1--1rnu4p.png"
                                          alt="User Image" />
                                 </div>
                             </div>
@@ -1729,7 +1729,7 @@
                         <div class="user-info mb-3">
                             <div class="user-shape-wrap">
                                 <div class="user-img">
-                                    <img src="assets/images/website-images//2.png"
+                                    <img src="~/assets/images/website-images//2.png"
                                          alt="User Image" />
                                 </div>
                             </div>
@@ -1747,7 +1747,7 @@
                         <div class="user-info mb-3">
                             <div class="user-shape-wrap">
                                 <div class="user-img">
-                                    <img src="assets/images/website-images//3.png"
+                                    <img src="~/assets/images/website-images//3.png"
                                          alt="User Image" />
                                 </div>
                             </div>
@@ -1780,31 +1780,31 @@
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
                                 <a class="brand-item" href="#">
-                                    <img src="assets/images/website-images//1-1.png"
+                                    <img src="~/assets/images/website-images//1-1.png"
                                          alt="Brand Image" />
                                 </a>
                             </div>
                             <div class="swiper-slide">
                                 <a class="brand-item" href="#">
-                                    <img src="assets/images/website-images//1-2.png"
+                                    <img src="~/assets/images/website-images//1-2.png"
                                          alt="Brand Image" />
                                 </a>
                             </div>
                             <div class="swiper-slide">
                                 <a class="brand-item" href="#">
-                                    <img src="assets/images/website-images//1-3.png"
+                                    <img src="~/assets/images/website-images//1-3.png"
                                          alt="Brand Image" />
                                 </a>
                             </div>
                             <div class="swiper-slide">
                                 <a class="brand-item" href="#">
-                                    <img src="assets/images/website-images//1-4.png"
+                                    <img src="~/assets/images/website-images//1-4.png"
                                          alt="Brand Image" />
                                 </a>
                             </div>
                             <div class="swiper-slide">
                                 <a class="brand-item" href="#">
-                                    <img src="assets/images/website-images//1-5.png"
+                                    <img src="~/assets/images/website-images//1-5.png"
                                          alt="Brand Image" />
                                 </a>
                             </div>
@@ -1853,7 +1853,7 @@
                                 <div class="blog-img img-hover-effect">
                                     <a href="blog.html">
                                         <img class="img-full"
-                                             src="assets/images/website-images/1-1-310x220.jpg"
+                                             src="~/assets/images/website-images/1-1-310x220.jpg"
                                              alt="Blog Image" />
                                     </a>
                                     <div class="inner-btn-wrap">
@@ -1887,7 +1887,7 @@
                                 <div class="blog-img img-hover-effect">
                                     <a href="blog.html">
                                         <img class="img-full"
-                                             src="assets/images/website-images/1-2-310x220.jpg"
+                                             src="~/assets/images/website-images/1-2-310x220.jpg"
                                              alt="Blog Image" />
                                     </a>
                                     <div class="inner-btn-wrap">
@@ -1921,7 +1921,7 @@
                                 <div class="blog-img img-hover-effect">
                                     <a href="blog.html">
                                         <img class="img-full"
-                                             src="assets/images/website-images/1-3-310x220.jpg"
+                                             src="~/assets/images/website-images/1-3-310x220.jpg"
                                              alt="Blog Image" />
                                     </a>
                                     <div class="inner-btn-wrap">

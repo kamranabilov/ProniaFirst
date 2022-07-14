@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20220714055514_createTagandPlanTag.cs" />
+    <Compile Remove="Migrations\20220714055514_createTagandPlanTag.Designer.cs" />
+    <Compile Remove="Migrations\20220714182724_addIsMaintoPlantImage.cs" />
+    <Compile Remove="Migrations\20220714182724_addIsMaintoPlantImage.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.27" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.27" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.27">

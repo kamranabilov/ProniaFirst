@@ -20,9 +20,8 @@ namespace ProniaTask.DAL
         public DbSet<PlantCategory> PlantCategories { get; set; }
         public DbSet<PlantImage> PlantImages { get; set; }
         public DbSet<PlantInformation> PlantInformation { get; set; }
-        public DbSet<Color> Colors { get; set; }
-        public DbSet<Size> Sizes { get; set; }
-
+        public DbSet<Tag> Tags { get; set; }
+        public DbSet<PlantTag> PlantTags { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

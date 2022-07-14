@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProniaTask.Models
 {
-    public class Size:BaseEntity
+    public class Tag:BaseEntity
     {
         public string Name { get; set; }
+        public List<PlantTag> PlantTags { get; set; }
     }
 }

@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace ProniaTask.Models
 {
-    public class PlantImage:BaseEntity
+    public class PlantTag:BaseEntity
     {
-        public string Name { get; set; }
-        public string Alternative { get; set; }
-        public bool? IsMain { get; set; } 
         public int PlantId { get; set; }
         public Plant Plant { get; set; }
+        public int TagId { get; set; }
+        public Tag Tag { get; set; }
     }
 }

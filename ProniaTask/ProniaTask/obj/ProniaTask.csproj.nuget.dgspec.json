@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\3.Asp.Net.Core\\ProniaTask\\ProniaTask\\ProniaTask.csproj": {}
+    "E:\\3.Asp.Net.Core\\GitPPronia\\ProniaTask\\ProniaTask\\ProniaTask.csproj": {}
   },
   "projects": {
-    "E:\\3.Asp.Net.Core\\ProniaTask\\ProniaTask\\ProniaTask.csproj": {
+    "E:\\3.Asp.Net.Core\\GitPPronia\\ProniaTask\\ProniaTask\\ProniaTask.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\3.Asp.Net.Core\\ProniaTask\\ProniaTask\\ProniaTask.csproj",
+        "projectUniqueName": "E:\\3.Asp.Net.Core\\GitPPronia\\ProniaTask\\ProniaTask\\ProniaTask.csproj",
         "projectName": "ProniaTask",
-        "projectPath": "E:\\3.Asp.Net.Core\\ProniaTask\\ProniaTask\\ProniaTask.csproj",
+        "projectPath": "E:\\3.Asp.Net.Core\\GitPPronia\\ProniaTask\\ProniaTask\\ProniaTask.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "E:\\3.Asp.Net.Core\\ProniaTask\\ProniaTask\\obj\\",
+        "outputPath": "E:\\3.Asp.Net.Core\\GitPPronia\\ProniaTask\\ProniaTask\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
