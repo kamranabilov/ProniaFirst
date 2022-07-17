@@ -146,77 +146,7 @@
                          role="tabpanel"
                          aria-labelledby="featured-tab">
                         <div class="product-item-wrap row">
-                            @foreach (Plant plant in Model.Plants)
-                            {
-                                <div class="col-xl-3 col-md-4 col-sm-6">
-                                    <div class="product-item">
-                                        <div class="product-img">
-                                            <a asp-controller="plant" asp-action="detail" asp-route-id="@plant.Id">
-                                                <img class="primary-img"
-                                                     src="~/assets/images/website-images//@plant.PlantImages.FirstOrDefault(x=>x.IsMain==true)?.Name"
-                                                     alt="@plant.PlantImages.FirstOrDefault(x=>x.IsMain==true)?.Alternative" />
-                                                <img class="secondary-img"
-                                                     src="~/assets/images/website-images//@plant.PlantImages.FirstOrDefault(x=>x.IsMain==false)?.Name"
-                                                     alt="@plant.PlantImages.FirstOrDefault(x=>x.IsMain==false)?.Alternative" />
-                                            </a>
-                                            <div class="product-add-action">
-                                                <ul>
-                                                    <li>
-                                                        <a href="wishlist.html"
-                                                           data-tippy="Add to wishlist"
-                                                           data-tippy-inertia="true"
-                                                           data-tippy-animation="shift-away"
-                                                           data-tippy-delay="50"
-                                                           data-tippy-arrow="true"
-                                                           data-tippy-theme="sharpborder">
-                                                            <i class="pe-7s-like"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li class="quuickview-btn"
-                                                        data-bs-toggle="modal"
-                                                        data-bs-target="#quickModal">
-                                                        <a href="#"
-                                                           data-tippy="Quickview"
-                                                           data-tippy-inertia="true"
-                                                           data-tippy-animation="shift-away"
-                                                           data-tippy-delay="50"
-                                                           data-tippy-arrow="true"
-                                                           data-tippy-theme="sharpborder">
-                                                            <i class="pe-7s-look"></i>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="cart.html"
-                                                           data-tippy="Add to cart"
-                                                           data-tippy-inertia="true"
-                                                           data-tippy-animation="shift-away"
-                                                           data-tippy-delay="50"
-                                                           data-tippy-arrow="true"
-                                                           data-tippy-theme="sharpborder">
-                                                            <i class="pe-7s-cart"></i>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <a class="product-name" href="shop.html">@plant.Name</a>
-                                            <div class="price-box pb-1">
-                                                <span class="new-price">$@plant.Price</span>
-                                            </div>
-                                            <div class="rating-box">
-                                                <ul>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            }
+                           @await Html.PartialAsync("_PlantsPartialView",Model.Plants.OrderByDescending(p=>p.Id).Take(8))
 
                         </div>
                     </div>
@@ -1420,15 +1350,17 @@
             <div class="col-lg-12">
                 <div class="swiper-container product-slider">
                     <div class="swiper-wrapper">
+                        @foreach (Plant plant in Model.Plants)
+	                        {
                         <div class="swiper-slide product-item">
                             <div class="product-img">
-                                <a href="shop.html">
+                                <a asp-controller="plant" asp-action="detail" asp-route-id="@plant.Id">
                                     <img class="primary-img"
-                                         src="~/assets/images/website-images//1-9-270x300.jpg"
-                                         alt="Product Images" />
+                                         src="~/assets/images/website-images//@plant.PlantImages.FirstOrDefault(x=>x.IsMain==true)?.Name"
+                                         alt="@plant.PlantImages.FirstOrDefault(x=>x.IsMain==true)?.Alternative" />
                                     <img class="secondary-img"
-                                         src="~/assets/images/website-images//1-10-270x300.jpg"
-                                         alt="Product Images" />
+                                         src="~/assets/images/website-images//@plant.PlantImages.FirstOrDefault(x=>x.IsMain==false)?.Name"
+                                         alt="@plant.PlantImages.FirstOrDefault(x=>x.IsMain==false)?.Alternative" />
                                 </a>
                                 <div class="product-add-action">
                                     <ul>
@@ -1446,7 +1378,7 @@
                                         <li class="quuickview-btn"
                                             data-bs-toggle="modal"
                                             data-bs-target="#quickModal">
-                                            <a href="#"
+                                            <a asp-controller="plant" asp-action="modaldetailview" asp-route-id="@plant.Id"
                                                data-tippy="Quickview"
                                                data-tippy-inertia="true"
                                                data-tippy-animation="shift-away"
@@ -1471,9 +1403,9 @@
                                 </div>
                             </div>
                             <div class="product-content">
-                                <a class="product-name" href="shop.html">American Marigold</a>
+                                <a class="product-name" href="shop.html">@plant.Name</a>
                                 <div class="price-box pb-1">
-                                    <span class="new-price">$23.45</span>
+                                    <span class="new-price">$@plant.Price</span>
                                 </div>
                                 <div class="rating-box">
                                     <ul>
@@ -1486,6 +1418,7 @@
                                 </div>
                             </div>
                         </div>
+	                        }
                         <div class="swiper-slide product-item">
                             <div class="product-img">
                                 <a href="shop.html">

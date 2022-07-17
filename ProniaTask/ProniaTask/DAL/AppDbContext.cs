@@ -22,6 +22,7 @@ namespace ProniaTask.DAL
         public DbSet<PlantInformation> PlantInformation { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<PlantTag> PlantTags { get; set; }
+        public DbSet<Setting> Settings { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -34,6 +35,10 @@ namespace ProniaTask.DAL
                 item.SetColumnType("decimal(6,2)");
                 //item.SetDefaultValue(20.5m);
             }
+
+            modelBuilder.Entity<Setting>()
+                .HasIndex(p => p.Key)
+                .IsUnique();
             base.OnModelCreating(modelBuilder);
         }
 

@@ -294,3 +294,5 @@ E:\3.Asp.Net.Core\GitPPronia\ProniaTask\ProniaTask\obj\Debug\netcoreapp3.1\Proni
 E:\3.Asp.Net.Core\GitPPronia\ProniaTask\ProniaTask\obj\Debug\netcoreapp3.1\ProniaTask.csproj.CopyComplete
 E:\3.Asp.Net.Core\GitPPronia\ProniaTask\ProniaTask\obj\Debug\netcoreapp3.1\ProniaTask.genruntimeconfig.cache
 E:\3.Asp.Net.Core\GitPPronia\ProniaTask\ProniaTask\obj\Debug\netcoreapp3.1\Razor\Views\Plant\Detail.cshtml.g.cs
+E:\3.Asp.Net.Core\GitPPronia\ProniaTask\ProniaTask\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_PlantsPartialView.cshtml.g.cs
+E:\3.Asp.Net.Core\GitPPronia\ProniaTask\ProniaTask\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ModalDetailView.cshtml.g.cs
