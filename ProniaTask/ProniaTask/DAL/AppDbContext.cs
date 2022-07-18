@@ -39,6 +39,10 @@ namespace ProniaTask.DAL
             modelBuilder.Entity<Setting>()
                 .HasIndex(p => p.Key)
                 .IsUnique();
+
+            modelBuilder.Entity<Category>()
+                .HasIndex(c => c.Name)
+                .IsUnique();
             base.OnModelCreating(modelBuilder);
         }
 

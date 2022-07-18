@@ -33,8 +33,15 @@ using ProniaTask.ViewModels;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "E:\3.Asp.Net.Core\GitPPronia\ProniaTask\ProniaTask\Views\_ViewImports.cshtml"
+using ProniaTask.ViewComponents;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb", @"/Views/Plant/Detail.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"132bf44ee45a065f33734866f548dff689a40cfd", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"c26e1f0ee1695beadf7fe68a7e4a506a2b27d911", @"/Views/_ViewImports.cshtml")]
     public class Views_Plant_Detail : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Plant>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("img-full"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -125,9 +132,9 @@ using ProniaTask.ViewModels;
                                 <div class=""swiper-wrapper"">
                                     <div class=""swiper-slide"">
                                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb12938", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb13129", async() => {
                 WriteLiteral("\r\n                                            ");
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb13238", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb13429", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -182,7 +189,7 @@ AddHtmlAttributeValue("", 1709, Model.PlantImages.FirstOrDefault(x=>x.IsMain==tr
 #line hidden
 #nullable disable
             WriteLiteral("                                            <a href=\"#\" class=\"swiper-slide\">\r\n                                                ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb16798", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb16989", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -265,7 +272,7 @@ AddHtmlAttributeValue("", 2635, plantImage.Name, 2635, 16, false);
                             <div class=""selector-wrap color-option"">
                                 <span class=""selector-title border-bottom-0"">Co");
             WriteLiteral("lor</span>\r\n                                <select class=\"nice-select wide border-bottom-0 rounded-0\">\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb21567", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb21758", async() => {
                 WriteLiteral("\r\n                                       ");
 #nullable restore
 #line 92 "E:\3.Asp.Net.Core\GitPPronia\ProniaTask\ProniaTask\Views\Plant\Detail.cshtml"
@@ -289,7 +296,7 @@ AddHtmlAttributeValue("", 2635, plantImage.Name, 2635, 16, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb23088", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb23279", async() => {
                 WriteLiteral("Blue");
             }
             );
@@ -305,7 +312,7 @@ AddHtmlAttributeValue("", 2635, plantImage.Name, 2635, 16, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb24282", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb24473", async() => {
                 WriteLiteral("Green");
             }
             );
@@ -321,7 +328,7 @@ AddHtmlAttributeValue("", 2635, plantImage.Name, 2635, 16, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb25477", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb25668", async() => {
                 WriteLiteral("Red");
             }
             );
@@ -343,7 +350,7 @@ AddHtmlAttributeValue("", 2635, plantImage.Name, 2635, 16, false);
                                 <span class=""selector-title"">Size</span>
                                 <select class=""nice-select wide rounded-0"">
                                     ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb26974", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb27165", async() => {
 #nullable restore
 #line 102 "E:\3.Asp.Net.Core\GitPPronia\ProniaTask\ProniaTask\Views\Plant\Detail.cshtml"
                                                       Write(Model.Size);
@@ -365,7 +372,7 @@ AddHtmlAttributeValue("", 2635, plantImage.Name, 2635, 16, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb28362", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb28553", async() => {
                 WriteLiteral("Large Size With Poot");
             }
             );
@@ -381,7 +388,7 @@ AddHtmlAttributeValue("", 2635, plantImage.Name, 2635, 16, false);
             Write(__tagHelperExecutionContext.Output);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             WriteLiteral("\r\n                                    ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb29574", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb29765", async() => {
                 WriteLiteral("Small Size With Poot");
             }
             );
@@ -434,7 +441,7 @@ AddHtmlAttributeValue("", 2635, plantImage.Name, 2635, 16, false);
                                 <li class=""service-item"">
                                     <div class=""service-img"">
                                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb32864", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb33055", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -460,7 +467,7 @@ AddHtmlAttributeValue("", 2635, plantImage.Name, 2635, 16, false);
                                 <li class=""service-item"">
                                     <div class=""service-img"">
                                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb34565", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb34756", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -486,7 +493,7 @@ AddHtmlAttributeValue("", 2635, plantImage.Name, 2635, 16, false);
                                 <li class=""service-item"">
                                     <div class=""service-img"">
                                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb36265", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb36456", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -753,7 +760,7 @@ AddHtmlAttributeValue("", 2635, plantImage.Name, 2635, 16, false);
                                         <div class=""blog-comment-item"">
                                             <div class=""blog-comment-img"">
                                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb51197", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb51388", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -788,7 +795,7 @@ AddHtmlAttributeValue("", 2635, plantImage.Name, 2635, 16, false);
                                         <div class=""blog-comment-item relpy-item"">
                                             <div class=""blog-comment-img"">
                                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb53844", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb54035", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -824,7 +831,7 @@ AddHtmlAttributeValue("", 2635, plantImage.Name, 2635, 16, false);
                                         <div class=""blog-comment-item"">
                                             <div class=""blog-comment-img"">
                                                 ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb56512", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb56703", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -860,7 +867,7 @@ AddHtmlAttributeValue("", 2635, plantImage.Name, 2635, 16, false);
                                     <div class=""feedback-area"">
                                         <h2 class=""heading"">Leave a comment</h2>
                                         ");
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb59182", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef9c333d6cc2513b76603bbef521cc8a6ddfa0cb59373", async() => {
                 WriteLiteral(@"
                                             <div class=""group-input"">
                                                 <div class=""form-field me-md-30 mb-30 mb-md-0"">
