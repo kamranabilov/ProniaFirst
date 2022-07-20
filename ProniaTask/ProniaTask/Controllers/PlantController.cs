@@ -30,7 +30,7 @@ namespace ProniaTask.Controllers
             Plant plant =await _context.Plants.Include(p => p.PlantImages)
                 .Include(p => p.PlantInformation)
                 .Include(p => p.PlantTags).ThenInclude(p => p.Tag)
-                .Include(p => p.PlantCategories).ThenInclude(p => p.Category)
+                .Include(p => p.PlantCategories).ThenInclude(p => p.Category)                
                 .FirstOrDefaultAsync(p => p.Id == id);
 
             ViewBag.Plants = await _context.Plants.Include(p => p.PlantImages).ToListAsync();

@@ -50,7 +50,7 @@ namespace ProniaTask.Areas.ProniaAdmin.Controllers
         {
             if (id==null || id==0)
             {
-                NotFound();                
+                return NotFound();                
             }
             Category category = _context.Categories.FirstOrDefault(c => c.Id == id);
             if (category == null) return NotFound();
@@ -64,12 +64,12 @@ namespace ProniaTask.Areas.ProniaAdmin.Controllers
             if (id==null || id==0) return NotFound();
             if (!ModelState.IsValid) return View();
             Category existed = _context.Categories.FirstOrDefault(c => c.Id==id);
-            if (existed != null) return NotFound();
+            if (existed == null) return NotFound();
             bool dublicate = _context.Categories.Any(c => c.Name == newCategory.Name);
             if (dublicate)
             {
                 ModelState.AddModelError("Name", "Name must be unique");
-                return NotFound();
+                return View();
             }
 
             _context.Entry(existed).CurrentValues.SetValues(newCategory);

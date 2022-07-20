@@ -1,0 +1,49 @@
+﻿@model Plant
+@{
+    ViewData["Title"] = "Create";
+}
+
+<main class="main-panel">
+    <h1 style="text-align:center; background-color:grey">Create Plant</h1>
+    <form method="post" class="mt-2" enctype="multipart/form-data">
+        <div>
+            <label>Image:</label><br />
+            <input asp-for="Photos" class="form-control" /><br />
+            <span classs="text-danger" asp-validation-for="Photos"></span>
+        </div>
+        <div>
+            <label>Name:</label><br />
+            <input asp-for="Name" type="text" class="form-control" /><br />
+            <span class="text-danger" asp-validation-for="Name"></span>
+        </div>
+        <div>
+            <label>Desc:</label><br />
+            <input asp-for="Desc" type="text" class="form-control" /><br />
+            <span class="text-danger" asp-validation-for="Desc"></span>
+        </div>
+        <div>
+            <label>Price:</label><br />
+            <input asp-for="Price" type="text" class="form-control" /><br />
+            <span class="text-danger" asp-validation-for="Price"></span>
+        </div>
+        <div>
+            <label>SKU:</label><br />
+            <input asp-for="SKU" type="text" class="form-control" /><br />
+            <span class="text-danger" asp-validation-for="SKU"></span>
+        </div>
+        <div>
+            <label>Plant Information:</label><br />
+            <select class="form-control"asp-for="PlantInformationId" asp-items="@(new SelectList(ViewBag.Information,"Id","Shipping"))"></select>
+        </div>
+        <div>
+            <label>Plant Category:</label><br />
+            <select class="form-control" asp-for="CategoryId" asp-items="@(new SelectList(ViewBag.Categories,"Id","Name"))"></select>
+        </div>
+        <div class="mt-2">
+            <button class="btn btn-success" type="submit">
+                Create
+            </button>
+        </div>
+    </form>
+</main>
+

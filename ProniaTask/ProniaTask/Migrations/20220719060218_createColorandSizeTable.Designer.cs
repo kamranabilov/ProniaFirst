@@ -10,8 +10,8 @@ using ProniaTask.DAL;
 namespace ProniaTask.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220718175240_updateCategoryTableNameUnique")]
-    partial class updateCategoryTableNameUnique
+    [Migration("20220719060218_createColorandSizeTable")]
+    partial class createColorandSizeTable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -41,15 +41,29 @@ namespace ProniaTask.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("ProniaTask.Models.Plant", b =>
+            modelBuilder.Entity("ProniaTask.Models.Color", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("Color")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Colors");
+                });
+
+            modelBuilder.Entity("ProniaTask.Models.Plant", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Desc")
                         .HasColumnType("nvarchar(max)");
@@ -64,9 +78,6 @@ namespace ProniaTask.Migrations
                         .HasColumnType("decimal(6,2)");
 
                     b.Property<string>("SKU")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Size")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Text_Desc")
@@ -192,6 +203,23 @@ namespace ProniaTask.Migrations
                     b.ToTable("Settings");
                 });
 
+            modelBuilder.Entity("ProniaTask.Models.Size", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(20)")
+                        .HasMaxLength(20);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Sizes");
+                });
+
             modelBuilder.Entity("ProniaTask.Models.Slider", b =>
                 {
                     b.Property<int>("Id")
@@ -200,6 +228,7 @@ namespace ProniaTask.Migrations
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Discount")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")
@@ -209,12 +238,15 @@ namespace ProniaTask.Migrations
                         .HasColumnType("tinyint");
 
                     b.Property<string>("Text")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Url")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");

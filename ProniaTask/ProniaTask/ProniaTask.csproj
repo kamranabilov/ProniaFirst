@@ -7,8 +7,20 @@
   <ItemGroup>
     <Compile Remove="Migrations\20220714055514_createTagandPlanTag.cs" />
     <Compile Remove="Migrations\20220714055514_createTagandPlanTag.Designer.cs" />
+    <Compile Remove="Migrations\20220714085825_addcolorandsizecolumntoplanttable.cs" />
+    <Compile Remove="Migrations\20220714085825_addcolorandsizecolumntoplanttable.Designer.cs" />
+    <Compile Remove="Migrations\20220714130651_addText_DescColumn.cs" />
+    <Compile Remove="Migrations\20220714130651_addText_DescColumn.Designer.cs" />
     <Compile Remove="Migrations\20220714182724_addIsMaintoPlantImage.cs" />
     <Compile Remove="Migrations\20220714182724_addIsMaintoPlantImage.Designer.cs" />
+    <Compile Remove="Migrations\20220714183436_addIsMaintoPlantImage.cs" />
+    <Compile Remove="Migrations\20220714183436_addIsMaintoPlantImage.Designer.cs" />
+    <Compile Remove="Migrations\20220715204300_createDbSettingTable.cs" />
+    <Compile Remove="Migrations\20220715204300_createDbSettingTable.Designer.cs" />
+    <Compile Remove="Migrations\20220718175240_updateCategoryTableNameUnique.cs" />
+    <Compile Remove="Migrations\20220718175240_updateCategoryTableNameUnique.Designer.cs" />
+    <Compile Remove="Migrations\20220718233047_addSliderTable.cs" />
+    <Compile Remove="Migrations\20220718233047_addSliderTable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

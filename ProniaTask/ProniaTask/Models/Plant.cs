@@ -1,4 +1,5 @@
-﻿using ProniaTask.Models.Base;
+﻿using Microsoft.AspNetCore.Http;
+using ProniaTask.Models.Base;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -15,13 +16,19 @@ namespace ProniaTask.Models
         //item.SetDefaultValue(20.5m);
         public string Desc { get; set; }
         public string SKU { get; set; }
-        public int PlantInformationId { get; set; }
-        public string Color { get; set; }
-        public string Size { get; set; }
+        public int PlantInformationId { get; set; }        
         public string Text_Desc { get; set; }
         public PlantInformation PlantInformation { get; set; }
         public List<PlantImage> PlantImages { get; set; }
         public List<PlantCategory> PlantCategories { get; set; }
         public List<PlantTag> PlantTags { get; set; }
+        [NotMapped]
+        public List<int> CategoryId { get; set; }
+        [NotMapped]
+        public IFormFile MainPhoto { get; set; }
+        [NotMapped]
+        public IFormFile HoverPhoto { get; set; }
+        [NotMapped]
+        public List<IFormFile> Photos { get; set; }
     }
 }
