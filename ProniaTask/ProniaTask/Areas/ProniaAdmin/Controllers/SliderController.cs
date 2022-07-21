@@ -42,11 +42,11 @@ namespace ProniaTask.Areas.ProniaAdmin.Controllers
         {
             if (!ModelState.IsValid) return View();
 
-            if (slider.Photo is null)
-            {
-                ModelState.AddModelError("Photo", "must be choose 1 image");
-                return View();
-            }
+            //if (slider.Photo is null)
+            //{
+            //    ModelState.AddModelError("Photo", "must be choose 1 image");
+            //    return View();
+            //}
             if (!slider.Photo.ImageIsOkey(2))
             {
                 ModelState.AddModelError("Photo", "choose image file");
@@ -81,7 +81,7 @@ namespace ProniaTask.Areas.ProniaAdmin.Controllers
             if (slider.Photo == null)
             {
                 string filename = existed.Image;
-                _context.Entry(existed).CurrentValues.SetValues(existed);
+                _context.Entry(existed).CurrentValues.SetValues(slider);
                 existed.Image = filename;
             }
             else
@@ -95,6 +95,7 @@ namespace ProniaTask.Areas.ProniaAdmin.Controllers
                 _context.Entry(existed).CurrentValues.SetValues(slider);
                 existed.Image = await slider.Photo.FileCreate(_env.WebRootPath, "assets/images/slider");
             }
+            //_context.Sliders.Add(slider);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

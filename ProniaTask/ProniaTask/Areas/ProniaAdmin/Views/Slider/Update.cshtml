@@ -25,6 +25,11 @@
             <span class="text-danger" asp-validation-for="Title"></span>
         </div>
         <div>
+            <label>Text:</label><br />
+            <input asp-for="Text" type="text" class="form-control" /><br />
+            <span class="text-danger" asp-validation-for="Text"></span>
+        </div>
+        <div>
             <label>Url:</label><br />
             <input asp-for="Url" type="text" class="form-control" /><br />
             <span class="text-danger" asp-validation-for="Url"></span>
@@ -36,7 +41,7 @@
         </div>
         <div class="mt-2">
             <button class="btn btn-success" type="submit">
-                Create
+                Update
             </button>
         </div>
     </form>

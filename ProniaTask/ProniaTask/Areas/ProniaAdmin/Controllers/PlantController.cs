@@ -72,27 +72,77 @@ namespace ProniaTask.Areas.ProniaAdmin.Controllers
                 {
                     plant.Photos.Remove(photo);
                     TempData["FileName"] += photo.FileName + ",";
+                    continue;
                 }
+                PlantImage plantImages = new PlantImage
+                {
+                    Name = await plant.MainPhoto.FileCreate(_env.WebRootPath, "assets/images/website-images"),
+                    IsMain = false,
+                    Alternative = plant.Name,
+                    Plant = plant
+                };
             }
-
             PlantImage main = new PlantImage
             {
-                Name = await plant.MainPhoto.FileCreate(_env.WebRootPath, "assets/images/slider"),
+                Name = await plant.MainPhoto.FileCreate(_env.WebRootPath, "assets/images/website-images"),
                 IsMain = true,
                 Alternative = plant.Name,
                 Plant = plant
             };
             PlantImage hover = new PlantImage
             {
-                Name = await plant.HoverPhoto.FileCreate(_env.WebRootPath, "assets/images/slider"),
+                Name = await plant.HoverPhoto.FileCreate(_env.WebRootPath, "assets/images/website-images"),
                 IsMain = null,
                 Alternative = plant.Name,
                 Plant = plant
             };
 
+            //plant.PlantImages.Add(main);
+            //plant.PlantImages.Add(hover);
 
-
+            plant.PlantCategories = new List<PlantCategory>();
+            foreach (int id in plant.CategoryId)
+            {
+                PlantCategory category = new PlantCategory
+                {
+                    CategoryId = id,
+                    Plant = plant
+                };
+                plant.PlantCategories.Add(category);
+            }
+            await _context.Plants.AddAsync(plant);
+            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
-        } 
+        }
+
+        public async Task<IActionResult> Update(int? id)
+        {
+            if (id == 0 || id == null) NotFound();
+            if (!ModelState.IsValid) return View();
+            Plant plant = await _context.Plants.FirstOrDefaultAsync(p => p.Id == id);
+            if (plant == null) return NotFound();
+            return View(plant);
+        }
+
+        [HttpPost]
+        [AutoValidateAntiforgeryToken]
+        public async Task<IActionResult> Update(int? id, Plant plant)
+        {
+            if (id == 0 || id == null) return NotFound();
+            if (!ModelState.IsValid) return View();
+            Plant existed = await _context.Plants.FirstOrDefaultAsync(p => p.Id == id);
+            if (existed == null) return NotFound();
+            return RedirectToAction(nameof(Index));
+        }
+
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == 0 || id == null) return NotFound();
+            Plant plant = await _context.Plants.FindAsync(id);
+            if (plant == null) return NotFound();
+            _context.Plants.Remove(plant);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
