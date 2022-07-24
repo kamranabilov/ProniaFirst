@@ -316,3 +316,11 @@ E:\3.Asp.Net.Core\GitPPronia\ProniaTask\ProniaTask\bin\Debug\netcoreapp3.1\Micro
 E:\3.Asp.Net.Core\GitPPronia\ProniaTask\ProniaTask\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 E:\3.Asp.Net.Core\GitPPronia\ProniaTask\ProniaTask\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
 E:\3.Asp.Net.Core\GitPPronia\ProniaTask\ProniaTask\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+E:\3.Asp.Net.Core\GitPPronia\ProniaTask\ProniaTask\obj\Debug\netcoreapp3.1\Razor\Areas\ProniaAdmin\Views\Plant\Update.cshtml.g.cs
+E:\3.Asp.Net.Core\GitPPronia\ProniaTask\ProniaTask\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+E:\3.Asp.Net.Core\GitPPronia\ProniaTask\ProniaTask\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+E:\3.Asp.Net.Core\GitPPronia\ProniaTask\ProniaTask\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+E:\3.Asp.Net.Core\GitPPronia\ProniaTask\ProniaTask\obj\Debug\netcoreapp3.1\Razor\Areas\ProniaAdmin\Views\Color\Index.cshtml.g.cs
+E:\3.Asp.Net.Core\GitPPronia\ProniaTask\ProniaTask\obj\Debug\netcoreapp3.1\Razor\Views\Order\Checkout.cshtml.g.cs
+E:\3.Asp.Net.Core\GitPPronia\ProniaTask\ProniaTask\obj\Debug\netcoreapp3.1\Razor\Areas\ProniaAdmin\Views\Color\Create.cshtml.g.cs
+E:\3.Asp.Net.Core\GitPPronia\ProniaTask\ProniaTask\obj\Debug\netcoreapp3.1\Razor\Areas\ProniaAdmin\Views\Color\Edit.cshtml.g.cs

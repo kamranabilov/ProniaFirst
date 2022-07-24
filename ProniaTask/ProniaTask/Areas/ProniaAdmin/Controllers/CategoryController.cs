@@ -35,7 +35,8 @@ namespace ProniaTask.Areas.ProniaAdmin.Controllers
         public IActionResult Create(Category category)
         {
             if (!ModelState.IsValid) return View();
-            Category existed = _context.Categories.FirstOrDefault(c => c.Name.ToLower().Trim() == category.Name.ToLower().Trim());
+            Category existed = _context.Categories
+                .FirstOrDefault(c => c.Name.ToLower().Trim() == category.Name.ToLower().Trim());
             if (existed!=null)
             {
                 ModelState.AddModelError("Name", "Category name must be unique");

@@ -27,6 +27,8 @@ namespace ProniaTask.DAL
         public DbSet<Setting> Settings { get; set; }
         public DbSet<Color> Colors { get; set; }
         public DbSet<Size> Sizes { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<BasketItem> BasketItems { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -47,6 +49,10 @@ namespace ProniaTask.DAL
             modelBuilder.Entity<Category>()
                 .HasIndex(c => c.Name)
                 .IsUnique();
+            modelBuilder.Entity<Color>()
+                .HasIndex(c => c.Name)
+                .IsUnique();
+
             base.OnModelCreating(modelBuilder);
         }
 

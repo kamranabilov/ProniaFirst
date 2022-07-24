@@ -45,9 +45,9 @@ namespace ProniaTask.Extensinos
             return file.Length / 1024 / 1024 < mb && file.ContentType.Contains("image/");
         }
 
-        internal static void FileDelete(object webRootPath, string v, string image)
-        {
-            throw new NotImplementedException();
-        }
+        //internal static void FileDelete(object webRootPath, string v, string image)
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

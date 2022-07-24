@@ -18,7 +18,7 @@
             <span classs="text-danger" asp-validation-for="HoverPhoto"></span>
         </div>
         <div>
-            <label>Image:</label><br />
+            <label>Images:</label><br />
             <input asp-for="Photos" class="form-control" /><br />
             <span classs="text-danger" asp-validation-for="Photos"></span>
         </div>
@@ -44,11 +44,13 @@
         </div>
         <div>
             <label>Plant Information:</label><br />
-            <select class="form-control" asp-for="PlantInformationId" asp-items="@(new SelectList(ViewBag.Information,"Id","Shipping"))"></select>
+            <select class="form-control" asp-for="PlantInformationId" 
+                    asp-items="@(new SelectList(ViewBag.Information,"Id","Shipping"))"></select>
         </div>
         <div>
             <label>Plant Category:</label><br />
-            <select class="form-control" asp-for="CategoryId" asp-items="@(new SelectList(ViewBag.Categories,"Id","Name"))"></select>
+            <select class="form-control" asp-for="CategoryId" 
+                    asp-items="@(new SelectList(ViewBag.Categories,"Id","Name"))"></select>
         </div>
         <div class="mt-2">
             <button class="btn btn-success" type="submit">

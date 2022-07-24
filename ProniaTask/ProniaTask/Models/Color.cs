@@ -11,5 +11,6 @@ namespace ProniaTask.Models
     {
         [Required, StringLength(maximumLength:20)]
         public string Name { get; set; }
+        //public List<Color> Colors { get; set; }
     }
 }

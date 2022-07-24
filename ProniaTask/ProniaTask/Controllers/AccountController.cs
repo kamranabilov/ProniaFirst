@@ -13,11 +13,14 @@ namespace ProniaTask.Controllers
     {
         private readonly UserManager<AppUser> _userManager;
         private readonly SignInManager<AppUser> _signInManager;
+        private readonly RoleManager<IdentityRole> _roleManager;
 
-        public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager)
+        public AccountController(UserManager<AppUser> userManager,
+            SignInManager<AppUser> signInManager, RoleManager<IdentityRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
         }
         public IActionResult Register()
         {
@@ -26,7 +29,7 @@ namespace ProniaTask.Controllers
 
         [HttpPost]
         [AutoValidateAntiforgeryToken]
-        public async Task<IActionResult> Reiister(RegisterVM register)
+        public async Task<IActionResult> Register(RegisterVM register)
         {
             if (!ModelState.IsValid) return NotFound();
             if (!register.Terms)
@@ -51,6 +54,7 @@ namespace ProniaTask.Controllers
                 }
                 return View();
             }
+            await _userManager.AddToRoleAsync(user, "Member");
             return RedirectToAction("Index", "Home");
         }
 
@@ -65,8 +69,12 @@ namespace ProniaTask.Controllers
         {
             if (!ModelState.IsValid) return View();
 
-            AppUser user = await _userManager.FindByIdAsync(login.UserName);
-            if (user is null) return View();
+            AppUser user = await _userManager.FindByNameAsync(login.UserName);
+            if (user is null) 
+            {
+                ModelState.AddModelError("", "if shertindeki error");
+                return View();
+            }
 
 
             Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(user, login.Password, login.Remember, true);
@@ -74,13 +82,15 @@ namespace ProniaTask.Controllers
             {
                 if (result.IsLockedOut)
                 {
-                    ModelState.AddModelError("", "Due to overtrying you have been blocked about 5 minutes");
+                    ModelState.AddModelError("", "Due to overtrying you have been blocked about 5 minutes, 5deqiqelik block");
                     return View();
                 }
 
-                ModelState.AddModelError("", "Username or password is incorrect");
+                ModelState.AddModelError("", "Username or password is incorrect, password duzgun deyil");
                 return View();
             }
+
+            HttpContext.Response.Cookies.Delete("Basket");
 
             return RedirectToAction("Index", "Home");
         }
@@ -95,5 +105,12 @@ namespace ProniaTask.Controllers
         {
             return Json(User.Identity.IsAuthenticated);
         }
+
+        //public async Task CreateRoles()
+        //{
+        //    await _roleManager.CreateAsync(new IdentityRole("Member"));
+        //    await _roleManager.CreateAsync(new IdentityRole("Moderator"));
+        //    await _roleManager.CreateAsync(new IdentityRole("Admin"));
+        //}
     }
 }

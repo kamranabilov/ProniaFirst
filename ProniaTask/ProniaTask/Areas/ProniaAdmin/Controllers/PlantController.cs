@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using ProniaTask.DAL;
@@ -12,6 +14,7 @@ using System.Threading.Tasks;
 namespace ProniaTask.Areas.ProniaAdmin.Controllers
 {
     [Area("ProniaAdmin")]
+    //[Authorize(Roles = "Moderator,Admin")]
     public class PlantController : Controller
     {
         private readonly AppDbContext _context;
@@ -65,23 +68,30 @@ namespace ProniaTask.Areas.ProniaAdmin.Controllers
                 return View();
             }
 
-            TempData["FileName"] = "";
-            foreach (var photo in plant.Photos)
+
+            plant.PlantImages = new List<PlantImage>();
+            TempData["Filename"] = "";
+            List<IFormFile> removeable = new List<IFormFile>();
+            foreach (var photo in plant.Photos.ToList())
             {
                 if (!photo.ImageIsOkey(2))
                 {
-                    plant.Photos.Remove(photo);
+                    removeable.Add(photo);
+                    //plant.Photos.Remove(photo);
                     TempData["FileName"] += photo.FileName + ",";
                     continue;
                 }
-                PlantImage plantImages = new PlantImage
+                PlantImage other = new PlantImage
                 {
-                    Name = await plant.MainPhoto.FileCreate(_env.WebRootPath, "assets/images/website-images"),
+                    Name = await photo.FileCreate(_env.WebRootPath, "assets/images/website-images"),
                     IsMain = false,
                     Alternative = plant.Name,
                     Plant = plant
                 };
+                plant.PlantImages.Add(other);
+
             }
+            plant.PlantImages.RemoveAll(p => removeable.Any(r => r.FileName == r.FileName));
             PlantImage main = new PlantImage
             {
                 Name = await plant.MainPhoto.FileCreate(_env.WebRootPath, "assets/images/website-images"),
@@ -97,8 +107,8 @@ namespace ProniaTask.Areas.ProniaAdmin.Controllers
                 Plant = plant
             };
 
-            //plant.PlantImages.Add(main);
-            //plant.PlantImages.Add(hover);
+            plant.PlantImages.Add(main);
+            plant.PlantImages.Add(hover);
 
             plant.PlantCategories = new List<PlantCategory>();
             foreach (int id in plant.CategoryId)
@@ -117,22 +127,36 @@ namespace ProniaTask.Areas.ProniaAdmin.Controllers
 
         public async Task<IActionResult> Update(int? id)
         {
+            ViewBag.Information = _context.PlantInformation.ToList();
+            ViewBag.Categories = _context.Categories.ToList();
             if (id == 0 || id == null) NotFound();
             if (!ModelState.IsValid) return View();
-            Plant plant = await _context.Plants.FirstOrDefaultAsync(p => p.Id == id);
+            Plant plant = await _context.Plants
+                .Include(p=>p.PlantImages)
+                .Include(p=>p.PlantInformation)
+                .Include(p=>p.PlantCategories)
+                .ThenInclude(p=>p.Category).SingleOrDefaultAsync(p => p.Id == id);
             if (plant == null) return NotFound();
             return View(plant);
         }
 
         [HttpPost]
         [AutoValidateAntiforgeryToken]
-        public async Task<IActionResult> Update(int? id, Plant plant)
+        [ActionName("Update")]
+        public async Task<IActionResult> Edit(int? id, Plant plant)
         {
-            if (id == 0 || id == null) return NotFound();
-            if (!ModelState.IsValid) return View();
-            Plant existed = await _context.Plants.FirstOrDefaultAsync(p => p.Id == id);
+            if (id == null || id == 0) return NotFound();
+            //if (!ModelState.IsValid) return View();
+            Plant existed = await _context.Plants
+                .Include(p => p.PlantImages)
+                .Include(p => p.PlantInformation)
+                .Include(p => p.PlantCategories)
+                .ThenInclude(p => p.Category).SingleOrDefaultAsync(p => p.Id == id);
             if (existed == null) return NotFound();
-            return RedirectToAction(nameof(Index));
+            List<PlantImage> removeable = existed.PlantImages.Where(p => p.IsMain == false && 
+            !plant.ImagesId.Contains(p.Id)).ToList();
+            existed.PlantImages.RemoveAll(p => removeable.Any(r => p.Id == r.Id));
+            return Json(plant.PlantImages);
         }
 
         public async Task<IActionResult> Delete(int? id)
